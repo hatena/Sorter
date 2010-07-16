@@ -5,11 +5,11 @@ use base qw(Test::Class);
 use Test::More;
 use Sorter;
 
-sub _01_new : Test(1) {
+sub init : Test(1) {
     new_ok 'Sorter';
 }
 
-sub _02_values : Tests {
+sub values : Tests {
     my $sorter = Sorter->new;
     is_deeply [$sorter->get_values], [];
 
@@ -23,7 +23,7 @@ sub _02_values : Tests {
     is_deeply [$sorter->get_values], [1,2,3,4,5];
 }
 
-sub _03_sort : Tests {
+sub sort : Tests {
     my $sorter = Sorter->new;
     $sorter->sort;
     is_deeply [$sorter->get_values], [];
